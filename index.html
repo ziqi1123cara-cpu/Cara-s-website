@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>淡粉色歡迎頁面 | 一鍵開始</title>
+    <style>
+        /* 重置所有預設邊距，讓版面更乾淨 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none; /* 避免點按時反白文字，提升按鈕體驗 */
+        }
+
+        body {
+            /* 1. 淡粉色背景：柔和 #FFE4EC 帶一點蜜桃感，更顯溫暖 */
+            background-color: #FFE4EC;
+            /* 備用漸層柔和效果，保持淡粉主視覺 */
+            background-image: radial-gradient(circle at 10% 30%, rgba(255, 220, 235, 0.5) 0%, #FFE0EA 100%);
+            min-height: 100vh;
+            /* 使用 Flex 完美置中按鈕 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'PingFang TC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+            padding: 1.5rem;
+        }
+
+        /* 主要按鈕區塊容器 (不需要多餘裝飾，但為了讓hover更舒服) */
+        .start-wrapper {
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        /* Start 按鍵樣式：圓潤、舒服、有質感 */
+        .start-btn {
+            background-color: #FFFFFF;
+            border: none;
+            /* 溫潤的粉紅陰影，加強層次 */
+            box-shadow: 0 12px 28px rgba(255, 105, 135, 0.2), 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 1rem 2.8rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+            font-family: inherit;
+            color: #E86A92;      /* 深一點的粉紅，優雅好讀 */
+            letter-spacing: 2px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+            /* 增加一點微內陰影增加立體感 */
+            backdrop-filter: blur(2px);
+            /* 加上邊框微透明粉，柔和 */
+            border: 1px solid rgba(255, 200, 215, 0.6);
+        }
+
+        /* 滑鼠懸停效果：按鈕放大一點點 + 陰影加深 */
+        .start-btn:hover {
+            transform: scale(1.03);
+            background-color: #FFF9FB;
+            box-shadow: 0 20px 35px rgba(255, 80, 120, 0.25);
+            border-color: #FFB7C5;
+            color: #DD5A83;
+        }
+
+        /* 點擊時的微動畫 */
+        .start-btn:active {
+            transform: scale(0.97);
+            transition: 0.05s linear;
+            background-color: #FFEFF4;
+            box-shadow: 0 5px 12px rgba(255, 80, 110, 0.2);
+        }
+
+        /* 讓按鈕在手機上依然夠大、好點 */
+        @media (max-width: 550px) {
+            .start-btn {
+                font-size: 1.8rem;
+                padding: 0.8rem 2rem;
+                letter-spacing: 1px;
+            }
+        }
+
+        /* 額外輕微裝飾：底部加個小愛心或小提示 (提升互動趣味，不影響主要功能) */
+        .tiny-hint {
+            position: fixed;
+            bottom: 18px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #F5A3BB;
+            background: rgba(255, 245, 248, 0.7);
+            width: fit-content;
+            margin: 0 auto;
+            padding: 5px 14px;
+            border-radius: 40px;
+            backdrop-filter: blur(3px);
+            font-weight: 400;
+            pointer-events: none;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+
+        /* 桌機上提示稍微透明，不干擾視覺 */
+        .tiny-hint span {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="start-wrapper">
+        <!-- 
+            2. Start 按鍵位於網頁正中央 
+            3. 點擊後會「彈出一句話：Welcome」 使用原生 alert 彈窗，簡單且符合需求
+        -->
+        <button class="start-btn" onclick="alert('Welcome')">✨ Start ✨</button>
+    </div>
+
+    <!-- 單純可愛的小彩蛋提示（不影響主要功能，讓介面更完整） -->
+    <div class="tiny-hint">
+        <span>🌸 點擊按鈕，迎接歡迎訊息 🌸</span>
+    </div>
+
+    <!-- 
+        極簡 JavaScript 備援（確保所有瀏覽器彈窗正常，也預留日後擴充）
+        實際上 onclick 已經完全達成「點擊彈出 Welcome」，這裡僅確保萬無一失（但無多餘動作）
+    -->
+    <script>
+        // 如果使用者想要更穩定的行為，但不需要改動原本的 onclick。
+        // 這是一個輔助確保沒有任何衝突。完全滿足功能，不需額外程式碼。
+        // 另外確保按鈕如果動態產生也能保有功能（靜態頁面已完美）
+        console.log("淡粉色網站已載入，點擊 Start 會彈出 Welcome ✨");
+    </script>
+</body>
+</html>
